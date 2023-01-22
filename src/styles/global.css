@@ -35,7 +35,7 @@ body {
 
 main {
     flex: 1 1 auto;
-    background-image: url("images/hex-222.webp");
+    background-image: url("/images/hex-222.webp");
 }
 
 footer {
