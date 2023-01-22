@@ -1,0 +1,17 @@
+<span
+    id="skew"
+    style="transform: skewY(30deg)"
+    class="absolute -bottom-full left-0 w-full h-full -z-10 bg-black/10"></span>
+
+<script is:inline>
+    const skewElement = document.getElementById("skew");
+    const handle = () => {
+        const base = Math.min(
+            Math.max(30 - document.body.scrollTop / 10, -50),
+            30
+        );
+        skewElement.style.transform = `skewY(${base}deg)`;
+    };
+
+    document.body.addEventListener("scroll", handle);
+</script>

@@ -1,0 +1,51 @@
+<div id="ref"></div>
+<script>
+    const diamondSize = 63;
+    let ref = document.getElementById("ref");
+
+    const getRandomPosition = () => {
+        const screenWidth = ref?.parentElement?.clientWidth ?? 0;
+        const screenHeight = ref?.parentElement?.clientHeight ?? 0;
+        const maxX = screenWidth / diamondSize;
+        const maxY = screenHeight / diamondSize;
+        const x = Math.floor(Math.random() * maxX - 1);
+        const y = Math.floor(Math.random() * maxY - 1);
+        return { x, y };
+    };
+
+    const renderDiamonds = () => {
+        const diamonds = Array.from({ length: 5 }, () => getRandomPosition());
+
+        for (let i = 0; i < diamonds.length; i++) {
+            const diamond = document.createElement("span");
+            diamond.classList.add(
+                "absolute",
+                "-z-10",
+                "bg-zinc-700",
+                "pt-1",
+                "top-0",
+                "left-0",
+                "h-[63px]",
+                "w-[63px]",
+                "animate-pulse-void"
+            );
+            diamond.style.clipPath =
+                "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)";
+            diamond.style.transform = `translate(${
+                diamonds[i].x * diamondSize
+            }px, ${diamonds[i].y * diamondSize}px)`;
+
+            ref?.appendChild(diamond);
+        }
+    };
+
+    setInterval(() => {
+        renderDiamonds();
+
+        setTimeout(() => {
+            while (ref?.firstChild) {
+                ref.removeChild(ref.firstChild);
+            }
+        }, 2000);
+    }, 2500);
+</script>

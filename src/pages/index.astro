@@ -1,0 +1,21 @@
+---
+import HighlightDiamonds from "../components/HighlightDiamonds.astro";
+import Skew from "../components/Skew.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Hardel Blogs">
+    <section class="h-screen overflow-hidden relative z-10 flex justify-center">
+        <div
+            class="container h-full flex flex-col justify-center items-center p-8 md:p-0"
+        >
+            <h1 class="font-bold text-gold text-center">Hardel Blogs</h1>
+            <hr />
+            <h3 class="text-zinc-300 text-center">
+                Crafting Generators will come back soon
+            </h3>
+            <HighlightDiamonds client:load />
+            <Skew />
+        </div>
+    </section>
+</Layout>
