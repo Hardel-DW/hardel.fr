@@ -6,16 +6,45 @@ import Layout from "../components/Layout.astro";
 
 <Layout title="Hardel Blogs">
     <section class="h-screen overflow-hidden relative z-10 flex justify-center">
-        <div
-            class="container h-full flex flex-col justify-center items-center p-8 md:p-0"
-        >
-            <h1 class="font-bold text-gold text-center">Hardel.fr was renamed to Hardel.io</h1>
-            <hr />
-            <h3 class="text-zinc-300 text-center">
-                <a href="https://hardel.io">https://hardel.io</a>
-            </h3>
-            <HighlightDiamonds client:load />
-            <Skew />
+        <div class="container h-full flex flex-col justify-center items-center p-8 md:p-0">
+            <h1 class="font-bold text-gold text-center mb-0">Informations</h1>
+            <h4 class="text-zinc-300 text-center">
+                <a href="https://hardel.io">Hardel.fr was renamed</a>
+            </h4>
+            <hr/>
+            <div class="flex justify-between items-center w-7/12 gap-x-8">
+
+                <div class="border border-zinc-700 rounded-2xl flex items-center justify-center w-full bg-black/20 hover:bg-black/50">
+                    <a href="https://hardel.io">
+                        <div class="flex flex-col items-center px-8 py-4">
+                            <h2 class="font-bold text-gold text-center">
+                                Blogs
+                            </h2>
+                            <hr>
+                            <p class="text-zinc-300 text-center">
+                                Personal website, blogs, articles
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="border border-zinc-700 rounded-2xl flex items-center justify-center w-full bg-black/20 hover:bg-black/50">
+                    <a href="https://labs.hardel.io" class="w-full h-full">
+                        <div class="flex flex-col items-center px-8 py-4">
+                            <h2 class="font-bold text-gold text-center">
+
+                                Labs
+                            </h2>
+                            <hr>
+                            <p class="text-zinc-300 text-center">
+                                For Generators and Tools
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <HighlightDiamonds client:load/>
+            <Skew/>
         </div>
     </section>
 </Layout>
